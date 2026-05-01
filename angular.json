@@ -6,6 +6,11 @@
     "analytics": "9df44617-4eba-4f61-8d7b-c93db47ca8a5"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "angular-test": {
       "projectType": "application",
@@ -26,7 +31,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {
