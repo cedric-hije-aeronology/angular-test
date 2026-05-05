@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset & box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #1976d2;
+  --color-accent: #ff4081;
+  --color-warn: #f44336;
+
+  --text-color: #333;
+  --bg-color: #fff;
+
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
