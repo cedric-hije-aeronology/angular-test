@@ -6,4 +6,29 @@ header {
     align-items: center;
     padding-inline: 16px;
     padding-block: 8px;
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            &:hover {
+                    color: red;
+                    cursor: pointer;
+                }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                &:hover {
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
