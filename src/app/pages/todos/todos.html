@@ -6,9 +6,15 @@
 
 } @else {
 
+    <form >
+        <label for="filter-todos">Filter Todos</label>
+        <input name="searchInput" id="filter-todos" placeholder="Search todos..." [(ngModel)]="searchInput">
+    </form>
+    
+
     @if (todoItems()) {
     <ul class="todos">
-        @for (todo of todoItems(); track todo.id) {
+        @for (todo of todoItems() | filterTodos : searchInput(); track todo.id) {
         <app-todo-item [todo]="todo" (todoToggled)="updateTodoItem(todo)"></app-todo-item>
         }
     </ul>

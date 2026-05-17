@@ -1,13 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { Todos as TodosService } from '../../services/todos';
 import { Todo } from '../../model/todo.type';
-import { catchError, of } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { TodoItem } from '../../components/todo-item/todo-item';
+import { FormsModule } from '@angular/forms';
+import { FilterTodosPipe } from '../../pipes/filter-todos-pipe';
 
 @Component({
   selector: 'app-todos',
-  imports: [TodoItem],
+  imports: [TodoItem, FormsModule, FilterTodosPipe],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
@@ -15,6 +15,7 @@ export class Todos {
   todoService = inject(TodosService)
   errorMessage = signal('')
   todoItems = signal<Array<Todo>>([])
+  searchInput = signal('')
 
   constructor() {
     this.todoService
